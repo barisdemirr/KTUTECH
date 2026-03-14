@@ -18,7 +18,7 @@ const Navbar = () => {
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
     return (
-        <header className={`sticky top-0 z-50 w-full dark:bg-background-dark/80 backdrop-blur-md border-b transition-colors border-primary/10 ${isMobileMenuOpen ? 'bg-white/100 dark:bg-background-dark/100' : 'bg-white/80 dark:bg-background-dark/80'}`}>
+        <header className={`sticky top-0 z-50 w-full dark:bg-background-dark/80 backdrop-blur-md border-b transition-colors border-primary/10 ${isMobileMenuOpen ? 'bg-white dark:bg-background-dark' : 'bg-white/80 dark:bg-background-dark/80'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}

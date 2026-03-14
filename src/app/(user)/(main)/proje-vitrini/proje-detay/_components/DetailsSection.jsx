@@ -10,21 +10,21 @@ const DetailsSection = () => {
                 </h1>
             </div>
             <div className="flex flex-wrap gap-4 py-6 border-y border-navy-deep/10">
-                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-[200px]">
+                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-50">
                     <span className="material-symbols-outlined text-primary text-2xl">calendar_month</span>
                     <div className="flex flex-col">
                         <span className="text-[10px] uppercase font-bold text-navy-deep/40 tracking-wider">Tarih</span>
                         <span className="text-navy-deep font-bold">25 Ekim 2024, Cuma</span>
                     </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-[200px]">
+                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-50">
                     <span className="material-symbols-outlined text-primary text-2xl">schedule</span>
                     <div className="flex flex-col">
                         <span className="text-[10px] uppercase font-bold text-navy-deep/40 tracking-wider">Saat</span>
                         <span className="text-navy-deep font-bold">14:00 - 18:30</span>
                     </div>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-[200px]">
+                <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-navy-deep/5 flex-1 min-w-50">
                     <span className="material-symbols-outlined text-primary text-2xl">location_on</span>
                     <div className="flex flex-col">
                         <span className="text-[10px] uppercase font-bold text-navy-deep/40 tracking-wider">Konum</span>

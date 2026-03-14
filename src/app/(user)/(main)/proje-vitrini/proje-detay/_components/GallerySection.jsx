@@ -63,7 +63,7 @@ export default function ProjectGallery() {
         <div className="w-full max-w-7xl mx-auto px-4 py-8">
             {/* 1. GRID SECTION (Aynı Kalabilir) */}
             <section className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-4 h-auto">
-                <div onClick={() => setCurrentIndex(0)} className="group relative col-span-1 md:col-span-8 overflow-hidden rounded-2xl cursor-pointer aspect-[4/3] md:h-[500px] border border-white/10 shadow-lg">
+                <div onClick={() => setCurrentIndex(0)} className="group relative col-span-1 md:col-span-8 overflow-hidden rounded-2xl cursor-pointer aspect-4/3 md:h-125 border border-white/10 shadow-lg">
                     <Image src={IMAGES[0]} alt="Proje" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-3 lg:gap-4">
@@ -85,13 +85,13 @@ export default function ProjectGallery() {
             {/* 2. RESPONSIVE LIGHTBOX (Swipe + Butonlar) */}
             {currentIndex !== null && (
                 <div
-                    className="fixed inset-0 z-[999] flex items-center justify-center bg-black/98 backdrop-blur-2xl touch-none"
+                    className="fixed inset-0 z-999 flex items-center justify-center bg-black/98 backdrop-blur-2xl touch-none"
                     onTouchStart={onTouchStart}
                     onTouchMove={onTouchMove}
                     onTouchEnd={onTouchEnd}
                 >
                     {/* Üst Bar: Kapatma ve Sayaç */}
-                    <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-[1001]">
+                    <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-1001">
                         <span className="text-white/60 text-sm font-mono">{currentIndex + 1} / {IMAGES.length}</span>
                         <button
                             onClick={() => setCurrentIndex(null)}
@@ -123,7 +123,7 @@ export default function ProjectGallery() {
                     {/* Sağ Ok - Mobilde Gizli, Masaüstünde Görünür */}
                     <button
                         onClick={showNext}
-                        className="hidden md:flex absolute right-8 text-white/20 hover:text-white transition-all p-3 z-[1001] items-center justify-center"
+                        className="hidden md:flex absolute right-8 text-white/20 hover:text-white transition-all p-3 z-1001 items-center justify-center"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
