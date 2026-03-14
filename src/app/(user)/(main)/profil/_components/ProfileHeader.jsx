@@ -3,7 +3,7 @@ import React from 'react';
 const ProfileHeader = () => {
     return (
         <section className="bg-white dark:bg-slate-900 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800 p-6 md:p-10 mb-8 overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-primary/10 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-r from-primary/10 to-transparent"></div>
             <div className="relative flex flex-col md:flex-row items-center md:items-end gap-6">
                 <div className="size-32 md:size-40 rounded-full border-4 border-white dark:border-slate-900 shadow-lg overflow-hidden bg-slate-200">
                     <img className="w-full h-full object-cover" data-alt="Close up profile picture of Ahmet Yilmaz" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLfcfNtGEa7EEGDRIr43o44XajfhJBHzs6HVzbA-B5OCskU1Kq4_8i0fym0C0ViJxaax-B8oaBsBqykFRHUS3JANkaCAOpiiztAnCQwpdzl1RP3muEk-BwPPItrWxiRqsOR7x1xJCKQPWO9SUYkRLkUKaLRRzfPtwYq_f5GnyPp64EHm3hwxmD3aj3aRKYJPa9nDwpz4-fXCiLtNzSF_Eko-QDsUaE0WHR8fjunHPrqEMEBdJqd__LxzuJ-vmho8SjGmyTQaIyF9eJ"/>

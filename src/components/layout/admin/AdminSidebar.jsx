@@ -19,15 +19,15 @@ const AdminSidebar = () => {
             <aside
                 className={`w-72 bg-background-dark border-r border-white/20 flex flex-col fixed lg:static h-full z-20 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}
             >
-                <div className="p-6">
+                <div className="p-6 mt-20 lg:mt-0">
                     <h1 className="text-primary text-xl font-black tracking-tighter leading-none">SYSTEM PORTAL</h1>
                     <p className="text-slate-500 text-xs font-medium uppercase tracking-widest mt-1">Admin Console</p>
                 </div>
                 <nav className="flex-1 px-3 space-y-1">
-                    <div className="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-r-lg transition-colors group cursor-pointer">
+                    <a href="/admin" className="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-r-lg transition-colors group cursor-pointer">
                         <span className="material-symbols-outlined text-primary fill-1">dashboard</span>
                         <span className="text-primary font-bold text-sm">Dashboard</span>
-                    </div>
+                    </a>
                     <div className="mt-4">
                         <div className="flex items-center justify-between px-4 py-2 text-slate-400 group cursor-pointer hover:text-primary transition-colors">
                             <div className="flex items-center gap-3">
@@ -37,23 +37,23 @@ const AdminSidebar = () => {
                             <span className="material-symbols-outlined text-sm">expand_more</span>
                         </div>
                         <div className="ml-9 mt-1 space-y-1">
-                            <a className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg" href="#">
+                            <a href="/admin/panel/haberler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
                                 <span className="material-symbols-outlined text-[18px]">newspaper</span>
                                 <span>Haberler</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg" href="#">
+                            <a href="/admin/panel/etkinlikler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
                                 <span className="material-symbols-outlined text-[18px]">calendar_today</span>
                                 <span>Etkinlikler</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg" href="#">
+                            <a href="/admin/panel/projeler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
                                 <span className="material-symbols-outlined text-[18px]">folder_open</span>
                                 <span>Projeler</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg" href="#">
+                            <a href="/admin/panel/staj-ilanlari" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
                                 <span className="material-symbols-outlined text-[18px]">school</span>
                                 <span>Staj İlanları</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg" href="#">
+                            <a href="/admin/panel/teammate-ilanlari" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
                                 <span className="material-symbols-outlined text-[18px]">group_add</span>
                                 <span>Teammate İlanları</span>
                             </a>

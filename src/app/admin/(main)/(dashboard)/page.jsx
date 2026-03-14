@@ -1,6 +1,6 @@
 const DashboardPage = () => {
     return (
-        <main className="flex-1 overflow-y-auto bg-background-dark relative tech-bg min-h-screen">
+        <main className="flex-1 h-screen overflow-y-auto bg-background-dark p-8">
             <div className="p-8 space-y-8 relative z-10 lg:my-15 lg:mx-30">
 
                 {/* Dashboard Header */}
