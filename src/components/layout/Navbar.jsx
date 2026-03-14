@@ -41,12 +41,12 @@ const Navbar = () => {
 
                     {/* Actions - CHANGED: md -> lg */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <button className="px-5 py-2 text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">
+                        <Link href="/login" className="px-5 py-2 text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">
                             Login
-                        </button>
-                        <button className="px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        </Link>
+                        <Link href="/register" className="px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
                             Register
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Toggle - CHANGED: md -> lg */}
@@ -64,8 +64,8 @@ const Navbar = () => {
             {/* Mobile Menu Container - CHANGED: md -> lg */}
             <div
                 className={`absolute top-full left-0 w-full lg:hidden bg-white dark:bg-background-dark border-b border-primary/10 transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen
-                        ? 'opacity-100 translate-y-0 visible'
-                        : 'opacity-0 -translate-y-4 invisible'
+                    ? 'opacity-100 translate-y-0 visible'
+                    : 'opacity-0 -translate-y-4 invisible'
                     }`}
             >
                 <nav className="flex flex-col gap-1 p-6">
@@ -77,12 +77,12 @@ const Navbar = () => {
                     <Link href="/birlikte-uret" className={`${getLinkClass('/birlikte-uret')} py-2`} onClick={() => setIsMobileMenuOpen(false)}>Birlikte Üret</Link>
                     <hr className="my-2 border-primary/5" />
                     <div className="flex flex-col gap-3 pt-2">
-                        <button className="w-full py-3 text-sm font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                        <a className="w-full py-3 text-sm font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-lg">
                             Login
-                        </button>
-                        <button className="w-full py-3 text-sm font-bold bg-primary text-white rounded-lg">
+                        </a>
+                        <a className="w-full py-3 text-sm font-bold bg-primary text-white rounded-lg">
                             Register
-                        </button>
+                        </a>
                     </div>
                 </nav>
             </div>
