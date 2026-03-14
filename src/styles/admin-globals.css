@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* Renk Tanımlamaları */
+  --color-primary: #FF8C00;
+  --color-background-light: #f8f6f6;
+  --color-background-dark: #121212;
+
+  /* Font Aileleri */
+  --font-display: "Work Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Border Radius */
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    @apply bg-background-light dark:bg-background-dark;
+  }
+}
+
+/* Custom Utilities */
+@layer components {
+  .tech-bg {
+    background-color: #000000;
+    background-image: 
+      linear-gradient(rgba(255, 102, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 102, 0, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+  }
+
+  .cursor-blink {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: var(--color-primary);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
