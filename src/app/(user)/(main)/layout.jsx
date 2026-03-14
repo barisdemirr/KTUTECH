@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
                     rel="stylesheet"
                 />
             </head>
-            <body>
+            <body className='bg-background-light dark:bg-background-dark'>
                 <Navbar />
                 {children}
                 <Footer />

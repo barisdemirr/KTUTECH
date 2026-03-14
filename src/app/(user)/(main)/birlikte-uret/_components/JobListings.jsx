@@ -55,18 +55,17 @@ export default function JobListings() {
                     </div>
                 </div>
             </div>
-
             <div className="flex items-center justify-center gap-2 py-8 border-t border-slate-100 dark:border-slate-800">
                 <button
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary hover:text-white transition-all">
+                    className="w-10 h-10 flex items-center justify-center rounded-lg border bg-white border-primary/10 hover:bg-primary hover:text-white transition-all">
                     <span className="material-symbols-outlined">chevron_left</span>
                 </button>
                 <div className="flex gap-2">
                     <button className="w-10 h-10 bg-primary text-white font-bold rounded-lg">1</button>
-                    <button className="w-10 h-10 border border-primary/10 rounded-lg hover:border-primary">2</button>
+                    <button className="w-10 h-10 border border-primary/10 rounded-lg bg-white hover:border-primary">2</button>
                 </div>
                 <button
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/10 hover:bg-primary hover:text-white transition-all">
+                    className="w-10 h-10 flex items-center justify-center rounded-lg border bg-white border-primary/10 hover:bg-primary hover:text-white transition-all">
                     <span className="material-symbols-outlined">chevron_right</span>
                 </button>
             </div>
