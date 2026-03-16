@@ -62,14 +62,14 @@ const AddNewsPage = () => {
                                     <button className="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700">
                                         <span className="material-symbols-outlined text-sm">format_underlined</span>
                                     </button>
-                                    <div className="w-[1px] h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+                                    <div className="w-px h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
                                     <button className="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700">
                                         <span className="material-symbols-outlined text-sm">format_list_bulleted</span>
                                     </button>
                                     <button className="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700">
                                         <span className="material-symbols-outlined text-sm">format_list_numbered</span>
                                     </button>
-                                    <div className="w-[1px] h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+                                    <div className="w-px h-4 bg-slate-300 dark:bg-slate-600 mx-1"></div>
                                     <button className="p-1.5 rounded hover:bg-white dark:hover:bg-slate-700">
                                         <span className="material-symbols-outlined text-sm">link</span>
                                     </button>
