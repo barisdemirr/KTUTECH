@@ -99,7 +99,7 @@ const AdminSidebar = () => {
                         )}
                     </div>
                     <div className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors cursor-pointer group">
-                        <a href="" className='flex items gap-3 py-3'>
+                        <a href="/admin/panel/duyurular" className='flex items gap-3 py-3'>
                             <span className="material-symbols-outlined text-[20px]">announcement</span>
                             <span className="font-semibold text-sm">Duyurular</span>
                         </a>
