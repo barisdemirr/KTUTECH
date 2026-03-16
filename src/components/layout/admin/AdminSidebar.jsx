@@ -1,9 +1,25 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const AdminSidebar = () => {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    useEffect(() => {
+        const dropdownPaths = [
+            '/admin/panel/haberler',
+            '/admin/panel/etkinlikler',
+            '/admin/panel/projeler',
+            '/admin/panel/staj-ilanlari',
+            '/admin/panel/teammate-ilanlari',
+        ];
+        setIsDropdownOpen(dropdownPaths.includes(pathname));
+    }, [pathname]);
+
+    const isActive = (path) => pathname === path;
 
     return (
         <>
@@ -24,44 +40,69 @@ const AdminSidebar = () => {
                     <p className="text-slate-500 text-xs font-medium uppercase tracking-widest mt-1">Admin Console</p>
                 </div>
                 <nav className="flex-1 px-3 space-y-1">
-                    <a href="/admin" className="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-r-lg transition-colors group cursor-pointer">
-                        <span className="material-symbols-outlined text-primary fill-1">dashboard</span>
-                        <span className="text-primary font-bold text-sm">Dashboard</span>
+                    <a
+                        href="/admin"
+                        className={`flex items-center gap-3 px-4 py-3 rounded-r-lg transition-colors group cursor-pointer ${isActive('/admin') ? 'sidebar-item-active text-primary font-bold' : 'text-slate-400'}`}
+                    >
+                        <span className="material-symbols-outlined ${isActive('/admin') ? 'text-primary' : ''}">dashboard</span>
+                        <span className="text-sm">Dashboard</span>
                     </a>
                     <div className="mt-4">
-                        <div className="flex items-center justify-between px-4 py-2 text-slate-400 group cursor-pointer hover:text-primary transition-colors">
+                        <div
+                            className={`flex items-center justify-between px-4 py-2 text-slate-400 group cursor-pointer hover:text-primary transition-colors ${isDropdownOpen ? 'text-primary' : ''}`}
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        >
                             <div className="flex items-center gap-3">
                                 <span className="material-symbols-outlined text-[20px]">settings_input_component</span>
                                 <span className="font-semibold text-sm">Panel</span>
                             </div>
-                            <span className="material-symbols-outlined text-sm">expand_more</span>
+                            <span className="material-symbols-outlined text-sm">{isDropdownOpen ? 'expand_less' : 'expand_more'}</span>
                         </div>
-                        <div className="ml-9 mt-1 space-y-1">
-                            <a href="/admin/panel/haberler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
-                                <span className="material-symbols-outlined text-[18px]">newspaper</span>
-                                <span>Haberler</span>
-                            </a>
-                            <a href="/admin/panel/etkinlikler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
-                                <span className="material-symbols-outlined text-[18px]">calendar_today</span>
-                                <span>Etkinlikler</span>
-                            </a>
-                            <a href="/admin/panel/projeler" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
-                                <span className="material-symbols-outlined text-[18px]">folder_open</span>
-                                <span>Projeler</span>
-                            </a>
-                            <a href="/admin/panel/staj-ilanlari" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
-                                <span className="material-symbols-outlined text-[18px]">school</span>
-                                <span>Staj İlanları</span>
-                            </a>
-                            <a href="/admin/panel/teammate-ilanlari" className="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors text-sm rounded-lg">
-                                <span className="material-symbols-outlined text-[18px]">group_add</span>
-                                <span>Teammate İlanları</span>
-                            </a>
-                        </div>
+                        {isDropdownOpen && (
+                            <div className="ml-9 mt-1 space-y-1">
+                                <a
+                                    href="/admin/panel/haberler"
+                                    className={`flex items-center gap-3 px-3 py-2 transition-colors text-sm rounded-lg ${isActive('/admin/panel/haberler') ? 'text-primary font-bold' : 'text-slate-400 hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined text-[18px]">newspaper</span>
+                                    <span>Haberler</span>
+                                </a>
+                                <a
+                                    href="/admin/panel/etkinlikler"
+                                    className={`flex items-center gap-3 px-3 py-2 transition-colors text-sm rounded-lg ${isActive('/admin/panel/etkinlikler') ? 'text-primary font-bold' : 'text-slate-400 hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    <span>Etkinlikler</span>
+                                </a>
+                                <a
+                                    href="/admin/panel/projeler"
+                                    className={`flex items-center gap-3 px-3 py-2 transition-colors text-sm rounded-lg ${isActive('/admin/panel/projeler') ? 'text-primary font-bold' : 'text-slate-400 hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined text-[18px]">folder_open</span>
+                                    <span>Projeler</span>
+                                </a>
+                                <a
+                                    href="/admin/panel/staj-ilanlari"
+                                    className={`flex items-center gap-3 px-3 py-2 transition-colors text-sm rounded-lg ${isActive('/admin/panel/staj-ilanlari') ? 'text-primary font-bold' : 'text-slate-400 hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined text-[18px]">school</span>
+                                    <span>Staj İlanları</span>
+                                </a>
+                                <a
+                                    href="/admin/panel/teammate-ilanlari"
+                                    className={`flex items-center gap-3 px-3 py-2 transition-colors text-sm rounded-lg ${isActive('/admin/panel/teammate-ilanlari') ? 'text-primary font-bold' : 'text-slate-400 hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined text-[18px]">group_add</span>
+                                    <span>Teammate İlanları</span>
+                                </a>
+                            </div>
+                        )}
                     </div>
                     <div className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-primary transition-colors cursor-pointer group">
-                        <span className="material-symbols-outlined text-[20px]">analytics</span>
-                        <span className="font-semibold text-sm">Reports</span>
+                        <a href="" className='flex items gap-3 py-3'>
+                            <span className="material-symbols-outlined text-[20px]">announcement</span>
+                            <span className="font-semibold text-sm">Duyurular</span>
+                        </a>
                     </div>
                 </nav>
                 <div className="p-4 border-t border-white/20">
