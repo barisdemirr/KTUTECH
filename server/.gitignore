@@ -1,0 +1,53 @@
+## [ Microsoft .NET Core / .NET 9 ]
+bin/
+obj/
+out/
+appsettings.Development.json
+appsettings.Local.json
+
+## [ User-specific files ]
+*.user
+*.userosscache
+*.sln.docstates
+
+## [ Visual Studio / VS Code ]
+.vs/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## [ GitHub Copilot ]
+# Copilot tarafýndan oluþturulan geçici snapshot ve sohbet geçmiþlerini korur
+.copilot-snapshots/
+.chat/
+
+## [ Packages ]
+*.nupkg
+# NuGet paketlerini repoya dahil etmeyiz (restore ile çekilir)
+node_modules/
+jspm_packages/
+typings/
+lib/
+publish/
+
+## [ OS specific files ]
+.DS_Store
+Thumbs.db
+
+## [ SQL Server / LocalDB ]
+*.mdf
+*.ldf
+*.ndf
+*.bak
+
+## [ Environment & Secrets ]
+.env
+.env.local
+.env.*.local
+secrets.json

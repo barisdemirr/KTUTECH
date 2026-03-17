@@ -1,0 +1,6 @@
+@ktutech.Presentation_HostAddress = http://localhost:5168
+
+GET {{ktutech.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
