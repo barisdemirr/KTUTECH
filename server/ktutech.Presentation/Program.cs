@@ -2,6 +2,7 @@ using ktutech.DataAccess.Abstract;
 using ktutech.DataAccess.Abstract.Common;
 using ktutech.DataAccess.Concrete.EntityFramework.Context;
 using ktutech.DataAccess.Concrete.EntityFramework.Repositories.Common;
+using ktutech.Presentation.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,9 @@ var app = builder.Build();
 
 
 // -----------Middlewares-----------
+
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
