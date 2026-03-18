@@ -11,12 +11,12 @@ public class User : BaseEntity
     public string NameSurname { get; set; } = default!;
     public string Email { get; set; } = default!;
     public string Phone { get; set; } = default!;
+    public string? Department { get; set; }
     public Role Role { get; set; }
     public bool IsVerified { get; set; }
     public string PasswordHash { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshExpire { get; set; }
-
     public ICollection<Event> Events { get; set; } = new HashSet<Event>();
     public ICollection<Project> Projects { get; set; } = new HashSet<Project>();
     public ICollection<TeammateListing> TeammateListings { get; set; } = new HashSet<TeammateListing>();
