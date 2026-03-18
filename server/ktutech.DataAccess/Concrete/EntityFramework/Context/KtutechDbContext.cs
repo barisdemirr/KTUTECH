@@ -43,6 +43,11 @@ namespace ktutech.DataAccess.Concrete.EntityFramework.Context
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
@@ -77,7 +82,7 @@ namespace ktutech.DataAccess.Concrete.EntityFramework.Context
         {
             var entries = ChangeTracker.Entries()
                 .Where(e => e.Entity is BaseEntity &&
-                           (e.State == EntityState.Added || e.State == EntityState.Modified));
+                            (e.State == EntityState.Added || e.State == EntityState.Modified));
 
             foreach (var entry in entries)
             {

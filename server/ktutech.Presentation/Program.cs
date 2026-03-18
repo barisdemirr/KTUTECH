@@ -1,14 +1,39 @@
-var builder = WebApplication.CreateBuilder(args);
+using ktutech.DataAccess.Abstract;
+using ktutech.DataAccess.Abstract.Common;
+using ktutech.DataAccess.Concrete.EntityFramework.Context;
+using ktutech.DataAccess.Concrete.EntityFramework.Repositories.Common;
+using Microsoft.EntityFrameworkCore;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+    
+
+
+//---------services-----------
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<KtutechDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
+
+builder.Services.Scan(scan => scan
+    .FromAssembliesOf(typeof(IGenericRepository<>))
+    .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Repository")))
+    .AsImplementedInterfaces()
+    .WithScopedLifetime());
+
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
+
+// -----------Middlewares-----------
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -19,5 +44,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+
 
 app.Run();
