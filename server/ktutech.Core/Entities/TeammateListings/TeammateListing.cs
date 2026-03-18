@@ -5,12 +5,12 @@ namespace ktutech.Core.Entities.TeammateListings;
 
 public class TeammateListing : BaseEntity
 {
-    public string Title { get; set; }
-    public string Description { get; set; }
+    public string Title { get; set; } = default!;
+    public string Description { get; set; } = default!;
     public int UserId { get; set; }
-    public User User { get; set; }
+    public User User { get; set; } = default!;
     public int CategoryId { get; set; }
-    public TeammateCategory TeammateCategory { get; set; }
+    public TeammateCategory TeammateCategory { get; set; } = default!;
     public bool IsActive { get; set; }
-    public ICollection<TeammateApplication> Applications { get; set; }
+    public ICollection<TeammateApplication> Applications { get; set; } = new HashSet<TeammateApplication>();
 }

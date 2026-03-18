@@ -4,7 +4,5 @@ namespace ktutech.Core.Entities.NewsItems;
 
 public class NewsCategory : CategoryBaseEntity
 {
-    public string Name { get; set; }
-    public bool IsActive { get; set; }
-    public ICollection<NewsItem> News { get; set; }
+    public ICollection<NewsItem> News { get; set; } = new HashSet<NewsItem>();
 }

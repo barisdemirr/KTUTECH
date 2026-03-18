@@ -5,11 +5,11 @@ namespace ktutech.Core.Entities.Projects;
 
 public class Project : BaseEntity
 {
-    public string Title { get; set; }
-    public string Description { get; set; }
+    public string Title { get; set; } = default!;
+    public string Description { get; set; } = default!;
     public int CategoryId { get; set; }
-    public ProjectCategory ProjectCategory { get; set; }
+    public ProjectCategory ProjectCategory { get; set; } = default!;
     public int UserId { get; set; }
-    public User User { get; set; }
-    public ICollection<ProjectImage> Images { get; set; }
+    public User User { get; set; } = default!;
+    public ICollection<ProjectImage> Images { get; set; } = new HashSet<ProjectImage>();
 }

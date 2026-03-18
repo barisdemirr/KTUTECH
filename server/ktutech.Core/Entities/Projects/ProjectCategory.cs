@@ -4,7 +4,6 @@ namespace ktutech.Core.Entities.Projects;
 
 public class ProjectCategory : CategoryBaseEntity
 {
-    public string Name { get; set; }
-    public bool IsActive { get; set; }
-    public ICollection<Project> Projects { get; set; }
+    public bool IsActive { get; set; } = true;
+    public ICollection<Project> Projects { get; set; } = new HashSet<Project>();
 }

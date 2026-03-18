@@ -4,7 +4,7 @@ namespace ktutech.Core.Entities.Announcements;
 
 public class Announcement : BaseEntity
 {
-    public string Title { get; set; }
-    public string Content { get; set; }
-    public bool IsActive { get; set; }
+    public string Title { get; set; } = default!;
+    public string Content { get; set; } = default!;
+    public bool IsActive { get; set; } = true;
 }
