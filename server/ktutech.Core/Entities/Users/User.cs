@@ -14,7 +14,7 @@ public class User : BaseEntity
     public string? Department { get; set; }
     public Role Role { get; set; }
     public bool IsVerified { get; set; }
-    public string PasswordHash { get; set; }
+    public string PasswordHash { get; set; } = default!;
     public string? RefreshToken { get; set; }
     public DateTime? RefreshExpire { get; set; }
     public ICollection<Event> Events { get; set; } = new HashSet<Event>();

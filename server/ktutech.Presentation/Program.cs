@@ -1,3 +1,5 @@
+using FluentValidation;
+using ktutech.Business.Validations;
 using ktutech.DataAccess.Abstract;
 using ktutech.DataAccess.Abstract.Common;
 using ktutech.DataAccess.Concrete.EntityFramework.Context;
@@ -27,8 +29,12 @@ builder.Services.Scan(scan => scan
     .AsImplementedInterfaces()
     .WithScopedLifetime());
 
-
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<LoginDtoValidator>();
+
 
 var app = builder.Build();
 
