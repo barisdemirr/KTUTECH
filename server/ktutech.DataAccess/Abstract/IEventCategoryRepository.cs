@@ -3,6 +3,6 @@ using ktutech.DataAccess.Abstract.Common;
 
 namespace ktutech.DataAccess.Abstract;
 
-public interface IEventCategoryRepository : IGenericDal<EventCategory>
+public interface IEventCategoryRepository : IGenericRepository<EventCategory>
 {
 }

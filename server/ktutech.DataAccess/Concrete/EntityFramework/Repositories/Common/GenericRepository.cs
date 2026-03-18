@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ktutech.DataAccess.Concrete.EntityFramework.Repositories.Common
 {
-    public class GenericRepository<T> : IGenericDal<T> where T : BaseEntity
+    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         protected readonly KtutechDbContext _context;
         private readonly DbSet<T> _dbSet;

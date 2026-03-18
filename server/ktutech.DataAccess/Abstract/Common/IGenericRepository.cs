@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ktutech.DataAccess.Abstract.Common
 {
-    public interface IGenericDal<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         Task AddAsync(T entity);
         Task RemoveAsync(T entity);

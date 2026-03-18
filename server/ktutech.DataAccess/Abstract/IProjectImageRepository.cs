@@ -3,6 +3,6 @@ using ktutech.DataAccess.Abstract.Common;
 
 namespace ktutech.DataAccess.Abstract;
 
-public interface IProjectImageRepository : IGenericDal<ProjectImage>
+public interface IProjectImageRepository : IGenericRepository<ProjectImage>
 {
 }

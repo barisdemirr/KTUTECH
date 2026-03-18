@@ -3,6 +3,6 @@ using ktutech.DataAccess.Abstract.Common;
 
 namespace ktutech.DataAccess.Abstract;
 
-public interface INewsCategoryRepository : IGenericDal<NewsCategory>
+public interface INewsCategoryRepository : IGenericRepository<NewsCategory>
 {
 }

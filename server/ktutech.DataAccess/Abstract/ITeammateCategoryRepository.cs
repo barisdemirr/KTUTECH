@@ -3,6 +3,6 @@ using ktutech.DataAccess.Abstract.Common;
 
 namespace ktutech.DataAccess.Abstract;
 
-public interface ITeammateCategoryRepository : IGenericDal<TeammateCategory>
+public interface ITeammateCategoryRepository : IGenericRepository<TeammateCategory>
 {
 }

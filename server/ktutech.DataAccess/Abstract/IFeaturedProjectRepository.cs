@@ -3,6 +3,6 @@ using ktutech.DataAccess.Abstract.Common;
 
 namespace ktutech.DataAccess.Abstract;
 
-public interface IFeaturedProjectRepository : IGenericDal<FeaturedProject>
+public interface IFeaturedProjectRepository : IGenericRepository<FeaturedProject>
 {
 }
