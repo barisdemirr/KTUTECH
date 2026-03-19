@@ -21,8 +21,4 @@
     <ProjectReference Include="..\ktutech.DataAccess\ktutech.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

@@ -30,5 +30,12 @@ public class RegisterDtoValidator : AbstractValidator<RegisterDto>
             .NotEmpty().WithMessage("Telefon numarası zorunludur.")
             .Length(11).WithMessage("Telefon numarası 0 ile başlayan 11 hane olmalıdır.")
             .Matches(@"^0\d{10}$").WithMessage("Telefon numarası 0 ile başlamalı ve sadece rakam içermelidir.");
+
+        RuleFor(x => x.Department)
+            .MaximumLength(100).WithMessage("Bölüm adı 100 karakterden fazla olamaz.")
+            .Must(d => string.IsNullOrEmpty(d) || d.Length >= 2)
+            .WithMessage("Bölüm adı girilecekse en az 2 karakter olmalıdır.")
+            .Matches(@"^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]*$")
+            .WithMessage("Bölüm adı sadece harflerden oluşmalıdır.");
     }
 }

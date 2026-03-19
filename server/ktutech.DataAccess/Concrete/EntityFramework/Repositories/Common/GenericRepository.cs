@@ -3,6 +3,7 @@ using ktutech.DataAccess.Abstract.Common;
 using ktutech.DataAccess.Concrete.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ktutech.DataAccess.Concrete.EntityFramework.Repositories.Common
@@ -41,9 +42,11 @@ namespace ktutech.DataAccess.Concrete.EntityFramework.Repositories.Common
             return await _dbSet.AsNoTracking().ToListAsync();
         }
 
-        public async Task<T?> GetByIdAsync(int id)
+        public async Task<T?> GetByFilterAsync(Expression<Func<T, bool>> filter)
         {
-            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbSet
+                .AsNoTracking()
+                .FirstOrDefaultAsync(filter);
         }
 
         public async Task<int> CountAsync()

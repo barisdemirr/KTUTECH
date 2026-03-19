@@ -11,6 +11,7 @@ namespace ktutech.Business.DTOs.User
         public string NameSurname { get; set; } = default!;
         public string Email { get; set; } = default!;
         public string Phone { get; set; } = default!;
+        public string? Department { get; set; }
         public string Password { get; set; } = default!;
     }
 }
