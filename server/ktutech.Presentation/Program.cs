@@ -28,6 +28,19 @@ builder.Services.AddDbContext<KtutechDbContext>(options =>
 
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("KtutechCorsPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") 
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); 
+    });
+});
+
+
+
 builder.Services.Scan(scan => scan
     .FromAssembliesOf(typeof(IGenericRepository<>))
     .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Repository")))
@@ -65,13 +78,13 @@ var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
+app.UseCors("KtutechCorsPolicy");
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
