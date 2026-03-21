@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "jsx": "preserve",
+    "checkJs": true
+  },
+  "include": [
+    "src/**/*",
+    ".next/types/**/*.ts", 
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "exclude": ["node_modules"]
 }
