@@ -26,7 +26,7 @@ const Navbar = () => {
                         <div className="bg-primary p-2 rounded-lg text-white">
                             <span className="material-symbols-outlined block">diamond</span>
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-primary">MidnightElite</span>
+                        <span className="text-xl font-bold tracking-tight text-primary">KTUTECH</span>
                     </div>
 
                     {/* Desktop Nav - CHANGED: md -> lg */}
